@@ -1,0 +1,49 @@
+#N canvas 33 23 1647 1107 12;
+#X obj 107 119 bng 25 250 50 0 empty empty TAP 3 32 0 10 -4034 -1 -1
+;
+#X obj 383 91 i;
+#X obj 417 91 + 1;
+#X obj 383 114 mod 4;
+#X obj 383 137 sel 0 1 2 3, f 25;
+#X obj 107 158 hradio 17 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 3;
+#X obj 382 214 timer;
+#X obj 426 168 t b b;
+#X obj 382 262 list store;
+#X msg 382 238 append \$1;
+#X obj 512 168 t b b b;
+#X obj 382 285 unpack f f f, f 31;
+#X obj 382 308 expr ($f1 + $f2 + $f3)/3, f 31;
+#X obj 150 119 bng 25 250 50 0 empty empty RESET -2 32 0 10 -203904
+-1 -1;
+#X obj 421 54 t 0 b;
+#X obj 107 179 nbx 4 20 100 10000 1 0 empty empty empty 0 -8 0 16 -262144
+-1 -1 100 256;
+#X obj 382 331 outlet averageTime;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 1;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 4 1 7 0;
+#X connect 4 2 7 0;
+#X connect 4 3 10 0;
+#X connect 6 0 9 0;
+#X connect 7 0 6 0;
+#X connect 7 1 6 1;
+#X connect 8 0 11 0;
+#X connect 9 0 8 0;
+#X connect 10 0 8 1;
+#X connect 10 1 8 0;
+#X connect 10 2 6 1;
+#X connect 11 0 12 0;
+#X connect 11 1 12 1;
+#X connect 11 2 12 2;
+#X connect 12 0 15 0;
+#X connect 12 0 16 0;
+#X connect 13 0 14 0;
+#X connect 14 0 1 1;
+#X connect 14 1 8 1;
+#X coords 0 -1 1 1 82 106 1 100 100;
